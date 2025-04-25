@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import NavigationBar from "../../NavigationBar/NavigationBar";
+import { Link } from "react-router-dom";
 
 const ProductDetails = () => {
   const product = useLoaderData();
@@ -12,6 +13,11 @@ const ProductDetails = () => {
   return (
     <div>
       <NavigationBar />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -49,9 +55,12 @@ const ProductDetails = () => {
                 min={1}
                 className="w-16 text-center border border-gray-300 rounded py-2"
               />
-              <button className="bg-orange-400 hover:bg-amber-600 text-black font-semibold px-6 py-2 rounded">
-                ADD TO CART
-              </button>
+              <Link to="/addToCart">
+                {" "}
+                <button className="bg-orange-400 hover:bg-amber-600 text-black font-semibold px-6 py-2 rounded">
+                  ADD TO CART
+                </button>
+              </Link>
             </div>
 
             {/* Description */}

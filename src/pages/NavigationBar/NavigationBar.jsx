@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
-    <div>
+    <div className="  fixed top-0 left-0 right-0 z-50">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -15,13 +15,12 @@ const NavigationBar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                {" "}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
+                />
               </svg>
             </div>
             <ul
@@ -29,11 +28,10 @@ const NavigationBar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <Link to="/">
-                {" "}
                 <li>
                   <a>Home</a>
                 </li>
-              </Link>{" "}
+              </Link>
               <li>
                 <Link to="/about">
                   <a>About</a>
@@ -41,17 +39,15 @@ const NavigationBar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost  text-xl">CloudCore</a>
+          <a className="btn btn-ghost text-xl">CloudCore</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to="/">
-                {" "}
                 <a className="font-semibold">Home</a>
               </Link>
             </li>
-            <li></li>
             <li>
               <Link to="/about">
                 <a className="font-semibold"> About</a>

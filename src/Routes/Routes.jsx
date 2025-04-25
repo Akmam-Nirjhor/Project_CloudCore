@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home/Home";
 import ProductDetails from "../pages/Home/Products/ProductDetails";
 import Test from "../pages/Home/Home/Test";
 import About from "../pages/About/About";
+import AddToCart from "../pages/AddToCart/AddToCart";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/addToCart",
+        element: <AddToCart></AddToCart>,
       },
     ],
   },

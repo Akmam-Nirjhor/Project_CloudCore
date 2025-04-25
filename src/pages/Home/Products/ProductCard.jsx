@@ -8,8 +8,8 @@ const ProductCard = ({ product }) => {
   const imageUrl = `https://admin.refabry.com/storage/product/${image}`;
 
   return (
-    <div className="bg-amber-400  ">
-      <div className="card bg-slate-100 w-96 h-96 shadow-sm transition-transform transform hover:scale-105 hover:shadow-xl ease-in-out duration-300  ">
+    <div className="  ">
+      <div className="card bg-slate-100 w-92 md:w-135 md:h-100 shadow-sm transition-transform transform hover:scale-105 hover:shadow-xl ease-in-out duration-300  ">
         <figure>
           <img
             className="h-96 w-max object-cover p-20 transition-transform ease-in-out duration-100 hover:scale-110"
