@@ -18,13 +18,12 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="text-center my-8 px-4 sm:px-6 ">
-      <h3 className="text-3xl text-orange-400 mb-12 font-bold mt-20">
+    <div className="text-center my-8 px-4 sm:px-6  ">
+      <h3 className="text-3xl text-orange-400  font-bold ">
         New Arrival Products
       </h3>
 
-      {/* Grid layout with responsiveness */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-2 ">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-2  ">
         {products.map((product) => (
           <div
             key={product.id}

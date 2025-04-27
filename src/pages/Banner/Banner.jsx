@@ -10,17 +10,16 @@ const images = [img1, img2, img3, img4];
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-slide every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
     }, 3000);
 
-    return () => clearInterval(interval); // cleanup
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="sm:p-2   ">
+    <div className="sm:p-2  mb-20  ">
       <div className="w-full lg:h-[500px]  relative overflow-hidden rounded-xl  ">
         {images.map((img, index) => (
           <div

@@ -249,7 +249,6 @@ const AddToCart = () => {
               {submittedOrder.Delivery_Charge}
             </p>
 
-            {/* Add to Cart Button */}
             <Link to="/">
               <button className="btn bg-orange-400 mt-6 w-full">
                 Continue Purchase

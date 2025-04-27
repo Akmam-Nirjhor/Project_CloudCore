@@ -1,12 +1,13 @@
 import React from "react";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import Footer from "../../pages/Footer/Footer";
 
 const About = () => {
   return (
     <div>
       <NavigationBar />
 
-      <div className="bg-gray-50 py-6 sm:py-10 px-4 sm:px-6 lg:px-24 min-h-screen">
+      <div className=" mt-15 py-6 sm:py-10 px-4 sm:px-6 lg:px-24 min-h-screen">
         <div className="max-w-5xl mx-auto bg-white p-4 sm:p-10 rounded-xl shadow-lg">
           <h1 className="text-2xl sm:text-4xl font-bold text-center mb-6 sm:mb-8 text-orange-500">
             About Us
@@ -87,6 +88,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
