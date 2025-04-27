@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { IoMdCart } from "react-icons/io";
 
 const ProductCard = ({ product }) => {
   const { id, name, image, category, price, discount_amount } = product;
@@ -8,34 +9,37 @@ const ProductCard = ({ product }) => {
   const imageUrl = `https://admin.refabry.com/storage/product/${image}`;
 
   return (
-    <div className="  ">
-      <div className="card bg-slate-100 w-92 md:w-135 md:h-100 shadow-sm transition-transform transform hover:scale-105 hover:shadow-xl ease-in-out duration-300  ">
+    <div className="h md:w-72 lg:w-72 xl:w-72 mx-auto my-4">
+      {/* Added margin */}
+      <div className="card shadow-sm p-4 h-116">
+        {/* Added padding */}
         <figure>
-          <img
-            className="h-96 w-max object-cover p-20 transition-transform ease-in-out duration-100 hover:scale-110"
-            src={imageUrl}
-            alt={name}
-          />
+          <img className="h-72 w-full p-2" src={imageUrl} alt={name} />
         </figure>
-        <div className="card-body ">
-          <h2 className="card-title text-xl">{name}</h2>
-          <p className="text-left text-sm text-gray-600">
-            Discount amount: {discount_amount}
+        <div className="card-body p-4">
+          <h2 className="card-title text-xl semi-font-bold text-gray-900">
+            {name}
+          </h2>
+          <h2 className="text-left font-bold">Product ID : {id}</h2>
+          <p className="text-left text-sm font-bold text-gray-600">
+            Price: {price}
           </p>
-          <div className="card-actions  mt-4">
-            <div className="flex justify-between gap-20">
+
+          <div className="card-actions mt-4">
+            <div className="flex justify-between items-center gap-4">
               <div>
-                {" "}
                 <Link to={`/productDetails/${product.id}`}>
-                  <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded transition duration-300">
+                  <button className="bg-orange-400 hover:bg-orange-600 text-white font-semibold text-xs p-1 md:p-3 px-2 rounded">
                     View Details
                   </button>
                 </Link>
               </div>
               <div>
-                {" "}
-                <Link to={`https://admin.refabry.com/storage/product/${id}`}>
-                  <button className="btn btn-primary">Buy Now</button>
+                <Link to={`/addToCart`}>
+                  <button className="bg-orange-400 hover:bg-orange-600 text-white font-semibold text-xs p-1  md:p-3 px-2 rounded flex items-center gap-1">
+                    Add to Cart
+                    <IoMdCart className="w-4 font-bold" />
+                  </button>
                 </Link>
               </div>
             </div>

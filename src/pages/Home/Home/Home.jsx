@@ -6,7 +6,7 @@ import Footer from "../../Footer/Footer";
 
 const Home = () => {
   return (
-    <div className="space-y-2 p-5 ">
+    <div className="space-y-4 p-5  ">
       <NavigationBar></NavigationBar>
       <Banner></Banner>
       <Products></Products>

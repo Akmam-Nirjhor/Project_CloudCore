@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 const ProductDetails = () => {
   const product = useLoaderData();
+  const { id, name, image, category, price, discount_amount, short_desc } =
+    product;
 
   if (!product) {
     return <p className="text-center text-red-600">Product not found.</p>;
@@ -34,47 +36,37 @@ const ProductDetails = () => {
           <div>
             <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
 
-            <p className="text-2xl font-bold mb-4">৳ {product.price}</p>
+            <p className="text-2xl font-bold mb-4">Price : {product.price}</p>
+            <p className="font-bold text-2xl">Product Description</p>
+
+            <p className="border-2 p-2 bg-orange-50 mt-2">{short_desc}</p>
 
             {/* Size Selection */}
-            <div className="mb-4">
-              <label className="block font-semibold mb-1">Size</label>
-              <select className="border border-gray-300 rounded px-3 py-2 w-full">
-                <option>Choose an option</option>
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
-              </select>
-            </div>
+            <div className="mb-4"></div>
 
             {/* Quantity and Add to Cart */}
-            <div className="flex items-center gap-4 mb-6">
-              <input
-                type="number"
-                defaultValue={1}
-                min={1}
-                className="w-16 text-center border border-gray-300 rounded py-2"
-              />
-              <Link to="/addToCart">
-                {" "}
-                <button className="bg-orange-400 hover:bg-amber-600 text-black font-semibold px-6 py-2 rounded">
-                  ADD TO CART
-                </button>
-              </Link>
-            </div>
+            <div className="flex items-center gap-4 mb-6"></div>
 
             {/* Description */}
             <div className="text-gray-700 space-y-2 text-sm">
+              <p className="font-bold text-2xl">Feature</p>
               <p>
                 Great for training, workouts, running and sports or daily wear
               </p>
-              <ul className="list-disc pl-5 space-y-1">
+              <ul className="list-disc pl-5 space-y-1 marker:text-orange-400">
                 <li>Made of 100% Polyester</li>
                 <li>Mesh construction fabric</li>
                 <li>Light weight and breathable</li>
-                <li>Athletic Fit & Comfortable</li>
+                <li>Winter-Ready Athletic Fit & Cozy Comfort</li>
               </ul>
             </div>
+
+            <br />
+            <Link to="/addToCart">
+              <button className="btn w-full md:w-auto px-4 bg-orange-400 text-white hover:bg-orange-600">
+                ADD TO CART
+              </button>
+            </Link>
           </div>
         </div>
       </div>

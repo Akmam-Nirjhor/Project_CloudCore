@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
-    <div className="  fixed top-0 left-0 right-0 z-50">
-      <div className="navbar bg-base-100 shadow-sm">
+    <div className=" fixed top-0 left-0 right-0 z-50">
+      <div className="navbar bg-white shadow-sm ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,7 +25,7 @@ const NavigationBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-white rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <Link to="/">
                 <li>
@@ -39,8 +39,11 @@ const NavigationBar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">CloudCore</a>
+          <a className="btn btn-ghost font-bold text-xl text-orange-500">
+            FabricNest
+          </a>
         </div>
+
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
@@ -50,13 +53,14 @@ const NavigationBar = () => {
             </li>
             <li>
               <Link to="/about">
-                <a className="font-semibold"> About</a>
+                <a className="font-semibold">About</a>
               </Link>
             </li>
           </ul>
         </div>
+
         <div className="navbar-end">
-          <a className="btn">Login</a>
+          <a className="btn bg-orange-400 ">Login</a>
         </div>
       </div>
     </div>

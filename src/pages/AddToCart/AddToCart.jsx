@@ -4,7 +4,6 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
-
 const AddToCart = () => {
   const [submittedOrder, setSubmittedOrder] = useState(null);
 
@@ -46,7 +45,9 @@ const AddToCart = () => {
       .then((data) => {
         setSubmittedOrder(orderInformation);
         console.log(data);
-        toast.success("Order placed successfully!");
+        toast.success("Order placed successfully!", {
+          className: "bg-orange-50 text-orange-600 border border-orange-600",
+        });
       })
       .catch((error) => {
         console.log("Error submitting booking:", error);
@@ -69,8 +70,12 @@ const AddToCart = () => {
       <br />
       <br />
       <br />
-      <div className="min-h-screen flex flex-col lg:flex-row items-start justify-center gap-10 bg-gray-50 px-4 py-6">
+      <p className=" text-center  text-2xl font-semibold text-orange-600">
+        Order Submission Form
+      </p>
+      <div className="min-h-screen flex flex-col lg:flex-row items-start justify-center gap-10  px-4 py-6">
         {/* FORM */}
+
         <form
           onSubmit={handleConfirmButton}
           className="bg-white p-6 rounded-lg shadow-md w-full max-w-2xl space-y-4"
@@ -129,13 +134,9 @@ const AddToCart = () => {
 
           <div className="flex flex-col">
             <p className="mb-1 font-semibold text-sm text-gray-700">Courier</p>
-            <input
-              type="text"
-              name="courier"
-              required
-              placeholder="e.g. Steadfast"
-              className={inputClass}
-            />
+            <select name="courier" required className={inputClass}>
+              <option value="steadfast">steadfast</option>
+            </select>
           </div>
 
           <div className="flex flex-col">
@@ -202,7 +203,10 @@ const AddToCart = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-neutral w-full mt-4">
+          <button
+            type="submit"
+            className="btn bg-orange-400 hover:bg-orange-600 w-full mt-4"
+          >
             Place Order
           </button>
         </form>
@@ -210,7 +214,7 @@ const AddToCart = () => {
         {/* ORDER SUMMARY */}
         {submittedOrder && (
           <div className="bg-orange-50 border-1 p-6 rounded-lg shadow-md w-full max-w-md">
-            <h2 className="text-xl font-bold mb-4 text-green-600">
+            <h2 className="text-xl font-bold mb-4 text-orange-600">
               Order Summary
             </h2>
             <p>
@@ -247,8 +251,7 @@ const AddToCart = () => {
 
             {/* Add to Cart Button */}
             <Link to="/">
-              {" "}
-              <button className="btn bg-orange-200 mt-6 w-full">
+              <button className="btn bg-orange-400 mt-6 w-full">
                 Continue Purchase
               </button>
             </Link>

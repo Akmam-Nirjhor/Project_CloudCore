@@ -11,21 +11,25 @@ const Products = () => {
       .then((data) => {
         console.log(data);
         setProducts(data.data.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
       });
   }, []);
 
   return (
-    <div className="text-center my-8 px-4 sm:px-6 lg:px-8">
-      <h3 className="text-3xl text-orange-400 mb-4 font-bold">
+    <div className="text-center my-8 px-4 sm:px-6 ">
+      <h3 className="text-3xl text-orange-400 mb-12 font-bold mt-20">
         New Arrival Products
       </h3>
-      <p className="text-lg font-semibold mb-6">
-        Total Products: {products.length}
-      </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Grid layout with responsiveness */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-2 ">
         {products.map((product) => (
-          <div key={product.id} className="flex flex-col items-center ">
+          <div
+            key={product.id}
+            className="flex flex-col items-center transition-transform duration-300 hover:scale-105 p-4"
+          >
             <ProductCard product={product} />
           </div>
         ))}
